@@ -1,0 +1,9 @@
+# Python virtual environment
+backend/weather_env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables / API keys
+.env
