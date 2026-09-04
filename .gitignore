@@ -1,0 +1,31 @@
+# Python virtual environment
+cv_env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Large ML files
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Dataset files
+*.zip
+*.rar
