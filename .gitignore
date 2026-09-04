@@ -1,9 +1,37 @@
 # Python virtual environment
-backend/weather_env/
+cv_env/
 
 # Python cache
 __pycache__/
-*.pyc
+*.py[cod]
 
-# Environment variables / API keys
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables
 .env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Large ML files
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Dataset files
+*.zip
+*.rar
+# CV test files
+cv/inference/test_data/
+cv/models/test.ogv
+bus.jpg
+runs/
+cv/privacy/blurred_test.jpg
