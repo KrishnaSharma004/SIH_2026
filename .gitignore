@@ -29,3 +29,9 @@ Thumbs.db
 # Dataset files
 *.zip
 *.rar
+# CV test files
+cv/inference/test_data/
+cv/models/test.ogv
+bus.jpg
+runs/
+cv/privacy/blurred_test.jpg
