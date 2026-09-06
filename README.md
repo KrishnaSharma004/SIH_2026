@@ -1,2 +1,2 @@
 # SIH_2026
-WeatherAI
+AI-Powered Mobile Urban Intelligence Platform Using Public Transport Fleet
