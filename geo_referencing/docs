@@ -1,0 +1,158 @@
+Georeferencing Module — Step-by-Step Guide
+AI-Powered Mobile Urban Intelligence Platform — No-Camera Demo Pipeline
+Overview
+This module converts a camera-pixel detection (e.g. "pothole at pixel (640,480) in frame N") into a real-world (latitude, longitude) coordinate, tagged with a timestamp. It requires three components: camera calibration, GPS/IMU pose fusion, and a pixel-to-ground projection chain. This guide includes a full simulation path so the pipeline can be demoed without a real bus or camera.
+Tech Stack Summary
+Component	Library
+Camera calibration	OpenCV (cv2.calibrateCamera)
+Pose fusion	filterpy (Extended Kalman Filter)
+Road network / route simulation	osmnx, networkx
+Geo math (offset → lat/lon)	geopy
+Visualization	folium (CartoDB tiles)
+Data interchange	JSON → FastAPI ingestion
+
+Step 1: Camera Calibration (Intrinsics)
+Determine the camera's intrinsic matrix (focal length, principal point, distortion) so pixels can be converted into real-world rays.
+import numpy as np
+import cv2
+
+# Simulated intrinsic matrix (typical dashcam/bus camera, 1280x720)
+K = np.array([
+    [900,   0, 640],
+    [  0, 900, 360],
+    [  0,   0,   1]
+], dtype=np.float64)
+
+dist_coeffs = np.zeros(5)  # assume mostly undistorted for simulation
+For a real deployment: capture ~20 checkerboard images per bus camera, run cv2.calibrateCamera() once, and store K and dist_coeffs in a per-camera config file.
+Step 2: Extrinsic Calibration (Camera → Vehicle Frame)
+Define the camera's mounting height, downward tilt, and offset relative to the GPS/IMU antenna on the bus roof.
+# Extrinsics: camera mounted 2.2m high, tilted 10 degrees downward, front-facing
+camera_height = 2.2          # meters
+pitch_angle = np.radians(10) # downward tilt
+yaw_offset = 0.0             # camera facing forward, aligned with bus heading
+
+Step 3: GPS/IMU Pose Fusion
+Fuse noisy GPS (1–5 Hz) with high-frequency IMU (gyro/accel, ~100 Hz) using an Extended Kalman Filter (EKF) to obtain smooth vehicle pose (lat, lon, heading) even between GPS updates.
+from filterpy.kalman import ExtendedKalmanFilter as EKF
+import numpy as np
+
+class VehiclePoseEKF:
+    def __init__(self):
+        self.ekf = EKF(dim_x=5, dim_z=2)  # state: [lat, lon, heading, v, yaw_rate]
+        self.ekf.x = np.array([22.7196, 75.8577, 0, 0, 0])  # init coords
+        self.ekf.P *= 0.1
+        self.ekf.R = np.diag([1e-6, 1e-6])  # GPS noise
+        self.ekf.Q = np.eye(5) * 1e-4       # process noise
+
+    def predict(self, dt, yaw_rate, velocity):
+        theta = self.ekf.x[2]
+        self.ekf.x[0] += velocity * np.cos(theta) * dt * 9e-6
+        self.ekf.x[1] += velocity * np.sin(theta) * dt * 9e-6
+        self.ekf.x[2] += yaw_rate * dt
+
+    def update_gps(self, lat, lon):
+        z = np.array([lat, lon])
+        self.ekf.update(z, HJacobian=lambda x: np.eye(2, 5), Hx=lambda x: x[:2])
+For simulation (no real bus GPS): generate a synthetic GPS/IMU trace along a real road using OpenStreetMap:
+import osmnx as ox
+
+center_lat, center_lon = 22.7196, 75.8577  # e.g. Indore
+G = ox.graph_from_point((center_lat, center_lon), dist=2000, network_type='drive')
+route_nodes = list(G.nodes)[:50]
+route_coords = [(G.nodes[n]['y'], G.nodes[n]['x']) for n in route_nodes]
+# Interpolate + add GPS noise + fake IMU yaw-rate to simulate a bus driving this route
+
+Step 4: Pixel → Ground Projection (Inverse Perspective Mapping)
+Given a detected pixel (u, v) — e.g. the bottom-center of a pothole bounding box — and a flat-road assumption, project it to a ground-plane offset (in meters) relative to the bus.
+def pixel_to_ground(u, v, K, camera_height, pitch_angle):
+    fx, fy = K[0,0], K[1,1]
+    cx, cy = K[0,2], K[1,2]
+
+    x = (u - cx) / fx
+    y = (v - cy) / fy
+    ray = np.array([x, y, 1.0])
+
+    Rx = np.array([
+        [1, 0, 0],
+        [0, np.cos(pitch_angle), -np.sin(pitch_angle)],
+        [0, np.sin(pitch_angle),  np.cos(pitch_angle)]
+    ])
+    ray_world = Rx @ ray
+
+    if ray_world[1] == 0:
+        return None
+    scale = -camera_height / ray_world[1]
+    ground_point = ray_world * scale  # (forward, 0, lateral) in meters
+
+    return ground_point[0], ground_point[2]  # (forward_m, lateral_m)
+
+Step 5: Ground Offset → Lat/Lon
+Combine the vehicle's current GPS position and heading with the local (forward, lateral) offset from Step 4.
+from geopy.distance import distance
+from geopy import Point
+
+def offset_to_latlon(lat, lon, heading_deg, forward_m, lateral_m):
+    p1 = distance(meters=forward_m).destination(Point(lat, lon), bearing=heading_deg)
+    p2 = distance(meters=lateral_m).destination(p1, bearing=(heading_deg + 90) % 360)
+    return p2.latitude, p2.longitude
+Full chain example:
+u, v = 640, 620  # pixel of detected pothole (bottom of bbox)
+forward_m, lateral_m = pixel_to_ground(u, v, K, camera_height, pitch_angle)
+event_lat, event_lon = offset_to_latlon(bus_lat, bus_lon, bus_heading, forward_m, lateral_m)
+
+Step 6: Simulate the Full Demo (No Camera Required)
+Since no camera is available, simulate detections instead of running YOLO inference.
+import json, time, random
+
+def simulate_detection_stream(route_coords, n_events=20):
+    events = []
+    for i in range(n_events):
+        idx = random.randint(0, len(route_coords)-2)
+        lat, lon = route_coords[idx]
+        u, v = random.randint(400, 900), random.randint(500, 700)
+        heading = random.uniform(0, 360)
+        forward_m, lateral_m = pixel_to_ground(u, v, K, camera_height, pitch_angle)
+        ev_lat, ev_lon = offset_to_latlon(lat, lon, heading, forward_m, lateral_m)
+        events.append({
+            "event_id": i,
+            "class": random.choice(["pothole", "waterlogging", "missing_zebra_crossing"]),
+            "confidence": round(random.uniform(0.7, 0.98), 2),
+            "timestamp": time.time() + i,
+            "lat": ev_lat, "lon": ev_lon,
+            "bus_lat": lat, "bus_lon": lon, "heading": heading
+        })
+    return events
+
+events = simulate_detection_stream(route_coords, n_events=20)
+with open("simulated_events.json", "w") as f:
+    json.dump(events, f, indent=2)
+This JSON feeds directly into the ingestion API (FastAPI + PostGIS), doubling as the integration test for that module.
+Step 7: Visualize on a Map
+Use CartoDB tiles rather than default OpenStreetMap tiles — OSM's volunteer-run servers require a browser Referer header and return "403 Access blocked" for scripted/notebook requests without one.
+import folium
+
+m = folium.Map(
+    location=[22.7196, 75.8577],
+    zoom_start=14,
+    tiles="cartodbpositron"
+)
+
+for ev in events:
+    folium.CircleMarker(
+        location=[ev["lat"], ev["lon"]],
+        radius=5,
+        popup=f"{ev['class']} ({ev['confidence']})",
+        color="red" if ev["class"]=="pothole" else "blue"
+    ).add_to(m)
+
+m.save("demo_map.html")
+
+Troubleshooting Notes
+•	NameError for camera_height, pitch_angle, K, route_coords, or events: these variables are defined in earlier cells that must actually be executed, not just present in the notebook. Use Kernel → Restart & Run All to run every cell top-to-bottom in order.
+•	"Access blocked / 403" on the map tiles: OpenStreetMap's default tile servers require a Referer header that scripts/notebooks often don't send. Switch tiles to "cartodbpositron" (or "cartodbdark_matter") — no API key needed, and referer-safe on any network.
+•	Map opens but appears blank as a local file: some browsers block file:// access to remote tiles/scripts. Serve the HTML locally (python -m http.server) or, in hosted notebooks (Colab/Kaggle), display the map object inline instead of saving to file.
+•	Map correctly centers on Indore (or another city): this is expected — the map's location parameter is set to the coordinates passed to folium.Map(), which should match wherever the simulated bus route (Step 3, osmnx) is generated.
+
+Validation Reference
+Open driving datasets such as KITTI or nuScenes provide real front-camera video paired with real GPS/IMU logs. These can be replayed through the same projection math to validate the pipeline against authentic sensor data, in addition to the synthetic simulation above — useful to cite as evidence of real-world applicability in a presentation or report.
