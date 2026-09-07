@@ -1,0 +1,222 @@
+[
+  {
+    "event_id": 0,
+    "class": "waterlogging",
+    "confidence": 0.85,
+    "timestamp": 1788710498.1138432,
+    "lat": 22.708034992192285,
+    "lon": 75.8699296742319,
+    "bus_lat": 22.7079828,
+    "bus_lon": 75.8697911,
+    "heading": 157.72157816199228
+  },
+  {
+    "event_id": 1,
+    "class": "waterlogging",
+    "confidence": 0.94,
+    "timestamp": 1788710499.1143148,
+    "lat": 22.700537164984954,
+    "lon": 75.87516470989634,
+    "bus_lat": 22.7019721,
+    "bus_lon": 75.8750535,
+    "heading": 280.9750529531636
+  },
+  {
+    "event_id": 2,
+    "class": "waterlogging",
+    "confidence": 0.92,
+    "timestamp": 1788710500.1147227,
+    "lat": 22.707741441434464,
+    "lon": 75.87660865442919,
+    "bus_lat": 22.7079055,
+    "bus_lon": 75.8764976,
+    "heading": 232.77420991493645
+  },
+  {
+    "event_id": 3,
+    "class": "missing_zebra_crossing",
+    "confidence": 0.84,
+    "timestamp": 1788710501.1150894,
+    "lat": 22.701940221660916,
+    "lon": 75.87489087002056,
+    "bus_lat": 22.7019721,
+    "bus_lon": 75.8750535,
+    "heading": 333.8015554326786
+  },
+  {
+    "event_id": 4,
+    "class": "pothole",
+    "confidence": 0.91,
+    "timestamp": 1788710502.1154864,
+    "lat": 22.70316654166071,
+    "lon": 75.87492305653876,
+    "bus_lat": 22.7027582,
+    "bus_lon": 75.8752729,
+    "heading": 40.09177383970341
+  },
+  {
+    "event_id": 5,
+    "class": "waterlogging",
+    "confidence": 0.82,
+    "timestamp": 1788710503.1161757,
+    "lat": 22.70408565446989,
+    "lon": 75.87617196197264,
+    "bus_lat": 22.704336,
+    "bus_lon": 75.8758588,
+    "heading": 236.0257180198908
+  },
+  {
+    "event_id": 6,
+    "class": "waterlogging",
+    "confidence": 0.92,
+    "timestamp": 1788710504.1166165,
+    "lat": 22.70777905291516,
+    "lon": 75.8764434747913,
+    "bus_lat": 22.7079055,
+    "bus_lon": 75.8764976,
+    "heading": 284.1909426010638
+  },
+  {
+    "event_id": 7,
+    "class": "waterlogging",
+    "confidence": 0.97,
+    "timestamp": 1788710505.1169505,
+    "lat": 22.70749806286309,
+    "lon": 75.87593302268338,
+    "bus_lat": 22.7076574,
+    "bus_lon": 75.8760636,
+    "heading": 296.95162679186046
+  },
+  {
+    "event_id": 8,
+    "class": "pothole",
+    "confidence": 0.92,
+    "timestamp": 1788710506.1173286,
+    "lat": 22.707608177030767,
+    "lon": 75.87644363717637,
+    "bus_lat": 22.7076574,
+    "bus_lon": 75.8760636,
+    "heading": 187.01619909687332
+  },
+  {
+    "event_id": 9,
+    "class": "pothole",
+    "confidence": 0.83,
+    "timestamp": 1788710507.1176112,
+    "lat": 22.708386721091408,
+    "lon": 75.87579825355499,
+    "bus_lat": 22.708232,
+    "bus_lon": 75.8757166,
+    "heading": 114.06170996712837
+  },
+  {
+    "event_id": 10,
+    "class": "waterlogging",
+    "confidence": 0.73,
+    "timestamp": 1788710508.1178524,
+    "lat": 22.704464694845658,
+    "lon": 75.87580657595971,
+    "bus_lat": 22.704336,
+    "bus_lon": 75.8758588,
+    "heading": 63.52449717823827
+  },
+  {
+    "event_id": 11,
+    "class": "waterlogging",
+    "confidence": 0.89,
+    "timestamp": 1788710509.1180816,
+    "lat": 22.703677349809553,
+    "lon": 75.87565902000796,
+    "bus_lat": 22.7023716,
+    "bus_lon": 75.8755506,
+    "heading": 103.76234288822016
+  },
+  {
+    "event_id": 12,
+    "class": "missing_zebra_crossing",
+    "confidence": 0.76,
+    "timestamp": 1788710510.118379,
+    "lat": 22.703507246434434,
+    "lon": 75.8729404717752,
+    "bus_lat": 22.70364,
+    "bus_lon": 75.8732064,
+    "heading": 339.7732584348874
+  },
+  {
+    "event_id": 13,
+    "class": "missing_zebra_crossing",
+    "confidence": 0.93,
+    "timestamp": 1788710511.11859,
+    "lat": 22.707524862200632,
+    "lon": 75.87003775734267,
+    "bus_lat": 22.7075304,
+    "bus_lon": 75.8701588,
+    "heading": 10.810494752483496
+  },
+  {
+    "event_id": 14,
+    "class": "waterlogging",
+    "confidence": 0.82,
+    "timestamp": 1788710512.118798,
+    "lat": 22.704253838878046,
+    "lon": 75.87578033944887,
+    "bus_lat": 22.7044152,
+    "bus_lon": 75.8760599,
+    "heading": 333.30528326129445
+  },
+  {
+    "event_id": 15,
+    "class": "pothole",
+    "confidence": 0.71,
+    "timestamp": 1788710513.1189957,
+    "lat": 22.70429418443874,
+    "lon": 75.87592068910502,
+    "bus_lat": 22.7042494,
+    "bus_lon": 75.8760768,
+    "heading": 7.538878220361496
+  },
+  {
+    "event_id": 16,
+    "class": "pothole",
+    "confidence": 0.92,
+    "timestamp": 1788710514.1192603,
+    "lat": 22.703748471202125,
+    "lon": 75.87572483804612,
+    "bus_lat": 22.7027582,
+    "bus_lon": 75.8752729,
+    "heading": 106.60144900902893
+  },
+  {
+    "event_id": 17,
+    "class": "waterlogging",
+    "confidence": 0.89,
+    "timestamp": 1788710515.11947,
+    "lat": 22.70808797023344,
+    "lon": 75.87575040516408,
+    "bus_lat": 22.7076574,
+    "bus_lon": 75.8760636,
+    "heading": 45.8205179468501
+  },
+  {
+    "event_id": 18,
+    "class": "missing_zebra_crossing",
+    "confidence": 0.74,
+    "timestamp": 1788710516.1196756,
+    "lat": 22.706634905174877,
+    "lon": 75.87663498048349,
+    "bus_lat": 22.706582,
+    "bus_lon": 75.8769598,
+    "heading": 25.543817615138586
+  },
+  {
+    "event_id": 19,
+    "class": "waterlogging",
+    "confidence": 0.73,
+    "timestamp": 1788710517.119916,
+    "lat": 22.706948515037443,
+    "lon": 75.87673077433666,
+    "bus_lat": 22.7073283,
+    "bus_lon": 75.8753726,
+    "heading": 185.84003330460672
+  }
+]
