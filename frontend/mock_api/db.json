@@ -1,0 +1,1351 @@
+{
+  "detections": [
+    {
+      "id": "det_001",
+      "type": "pothole",
+      "lat": 23.2599,
+      "lng": 77.4126,
+      "confidence": 0.87,
+      "timestamp": "2026-09-05T08:12:00Z",
+      "busId": "BUS-14",
+      "routeId": "R7"
+    },
+    {
+      "id": "det_002",
+      "type": "waterlogging",
+      "lat": 23.262,
+      "lng": 77.415,
+      "confidence": 0.79,
+      "timestamp": "2026-09-05T08:14:00Z",
+      "busId": "BUS-14",
+      "routeId": "R7"
+    },
+    {
+      "id": "det_003",
+      "type": "pothole",
+      "lat": 23.258,
+      "lng": 77.4102,
+      "confidence": 0.91,
+      "timestamp": "2026-09-05T08:16:00Z",
+      "busId": "BUS-09",
+      "routeId": "R3"
+    },
+    {
+      "id": "det_004",
+      "type": "missing_signage",
+      "lat": 23.2645,
+      "lng": 77.4088,
+      "confidence": 0.68,
+      "timestamp": "2026-09-05T08:20:00Z",
+      "busId": "BUS-02",
+      "routeId": "R1"
+    },
+    {
+      "id": "inc_001",
+      "type": "incident",
+      "lat": 23.2612,
+      "lng": 77.409,
+      "confidence": 0.91,
+      "timestamp": "2026-09-05T08:15:00Z",
+      "busId": "BUS-09",
+      "routeId": "R3"
+    },
+    {
+      "id": "det_005",
+      "type": "missing_signage",
+      "lat": 23.268266,
+      "lng": 77.384101,
+      "confidence": 0.69,
+      "timestamp": "2026-09-06T07:44:00Z",
+      "busId": "BUS-18",
+      "routeId": "R2"
+    },
+    {
+      "id": "det_006",
+      "type": "pothole",
+      "lat": 23.26533,
+      "lng": 77.384507,
+      "confidence": 0.68,
+      "timestamp": "2026-09-05T15:34:00Z",
+      "busId": "BUS-07",
+      "routeId": "R12"
+    },
+    {
+      "id": "det_007",
+      "type": "waterlogging",
+      "lat": 23.268893,
+      "lng": 77.415296,
+      "confidence": 0.77,
+      "timestamp": "2026-09-07T06:06:00Z",
+      "busId": "BUS-06",
+      "routeId": "R12"
+    },
+    {
+      "id": "det_008",
+      "type": "waterlogging",
+      "lat": 23.255257,
+      "lng": 77.399272,
+      "confidence": 0.96,
+      "timestamp": "2026-09-07T07:44:00Z",
+      "busId": "BUS-03",
+      "routeId": "R7"
+    },
+    {
+      "id": "det_009",
+      "type": "missing_divider",
+      "lat": 23.235703,
+      "lng": 77.43345,
+      "confidence": 0.7,
+      "timestamp": "2026-09-05T13:50:00Z",
+      "busId": "BUS-18",
+      "routeId": "R2"
+    },
+    {
+      "id": "det_010",
+      "type": "missing_divider",
+      "lat": 23.288287,
+      "lng": 77.405312,
+      "confidence": 0.71,
+      "timestamp": "2026-09-07T15:51:00Z",
+      "busId": "BUS-07",
+      "routeId": "R12"
+    },
+    {
+      "id": "det_011",
+      "type": "missing_signage",
+      "lat": 23.234073,
+      "lng": 77.422276,
+      "confidence": 0.97,
+      "timestamp": "2026-09-06T07:43:00Z",
+      "busId": "BUS-13",
+      "routeId": "R5"
+    },
+    {
+      "id": "det_012",
+      "type": "waterlogging",
+      "lat": 23.257105,
+      "lng": 77.432647,
+      "confidence": 0.74,
+      "timestamp": "2026-09-06T17:26:00Z",
+      "busId": "BUS-09",
+      "routeId": "R12"
+    },
+    {
+      "id": "det_013",
+      "type": "missing_divider",
+      "lat": 23.286099,
+      "lng": 77.421482,
+      "confidence": 0.84,
+      "timestamp": "2026-09-06T08:47:00Z",
+      "busId": "BUS-15",
+      "routeId": "R7"
+    },
+    {
+      "id": "det_014",
+      "type": "road_crack",
+      "lat": 23.246097,
+      "lng": 77.438123,
+      "confidence": 0.81,
+      "timestamp": "2026-09-07T06:57:00Z",
+      "busId": "BUS-08",
+      "routeId": "R1"
+    },
+    {
+      "id": "det_015",
+      "type": "pothole",
+      "lat": 23.278203,
+      "lng": 77.40667,
+      "confidence": 0.68,
+      "timestamp": "2026-09-07T09:37:00Z",
+      "busId": "BUS-16",
+      "routeId": "R7"
+    },
+    {
+      "id": "det_016",
+      "type": "waterlogging",
+      "lat": 23.282981,
+      "lng": 77.421171,
+      "confidence": 0.7,
+      "timestamp": "2026-09-06T15:34:00Z",
+      "busId": "BUS-18",
+      "routeId": "R5"
+    },
+    {
+      "id": "det_017",
+      "type": "missing_divider",
+      "lat": 23.274721,
+      "lng": 77.408306,
+      "confidence": 0.75,
+      "timestamp": "2026-09-06T08:21:00Z",
+      "busId": "BUS-17",
+      "routeId": "R8"
+    },
+    {
+      "id": "det_018",
+      "type": "pothole",
+      "lat": 23.235355,
+      "lng": 77.385427,
+      "confidence": 0.66,
+      "timestamp": "2026-09-06T17:36:00Z",
+      "busId": "BUS-14",
+      "routeId": "R10"
+    },
+    {
+      "id": "det_019",
+      "type": "missing_zebra_crossing",
+      "lat": 23.233712,
+      "lng": 77.405497,
+      "confidence": 0.8,
+      "timestamp": "2026-09-05T17:36:00Z",
+      "busId": "BUS-04",
+      "routeId": "R11"
+    },
+    {
+      "id": "det_020",
+      "type": "road_crack",
+      "lat": 23.282987,
+      "lng": 77.427653,
+      "confidence": 0.73,
+      "timestamp": "2026-09-07T13:25:00Z",
+      "busId": "BUS-06",
+      "routeId": "R8"
+    },
+    {
+      "id": "det_021",
+      "type": "road_crack",
+      "lat": 23.230095,
+      "lng": 77.425926,
+      "confidence": 0.7,
+      "timestamp": "2026-09-06T14:39:00Z",
+      "busId": "BUS-04",
+      "routeId": "R11"
+    },
+    {
+      "id": "det_022",
+      "type": "missing_divider",
+      "lat": 23.247807,
+      "lng": 77.420937,
+      "confidence": 0.68,
+      "timestamp": "2026-09-07T08:45:00Z",
+      "busId": "BUS-18",
+      "routeId": "R9"
+    },
+    {
+      "id": "det_023",
+      "type": "missing_zebra_crossing",
+      "lat": 23.28501,
+      "lng": 77.418537,
+      "confidence": 0.61,
+      "timestamp": "2026-09-07T11:14:00Z",
+      "busId": "BUS-08",
+      "routeId": "R1"
+    },
+    {
+      "id": "det_024",
+      "type": "pothole",
+      "lat": 23.244352,
+      "lng": 77.416641,
+      "confidence": 0.63,
+      "timestamp": "2026-09-08T07:10:00Z",
+      "busId": "BUS-18",
+      "routeId": "R3"
+    },
+    {
+      "id": "det_025",
+      "type": "missing_divider",
+      "lat": 23.237603,
+      "lng": 77.411117,
+      "confidence": 0.66,
+      "timestamp": "2026-09-08T09:36:00Z",
+      "busId": "BUS-18",
+      "routeId": "R12"
+    },
+    {
+      "id": "det_026",
+      "type": "missing_zebra_crossing",
+      "lat": 23.271292,
+      "lng": 77.425377,
+      "confidence": 0.98,
+      "timestamp": "2026-09-07T13:28:00Z",
+      "busId": "BUS-17",
+      "routeId": "R8"
+    },
+    {
+      "id": "det_027",
+      "type": "missing_signage",
+      "lat": 23.23716,
+      "lng": 77.396082,
+      "confidence": 0.61,
+      "timestamp": "2026-09-06T16:02:00Z",
+      "busId": "BUS-08",
+      "routeId": "R1"
+    },
+    {
+      "id": "det_028",
+      "type": "waterlogging",
+      "lat": 23.23416,
+      "lng": 77.420466,
+      "confidence": 0.63,
+      "timestamp": "2026-09-05T11:38:00Z",
+      "busId": "BUS-03",
+      "routeId": "R9"
+    },
+    {
+      "id": "det_029",
+      "type": "waterlogging",
+      "lat": 23.24418,
+      "lng": 77.422739,
+      "confidence": 0.8,
+      "timestamp": "2026-09-08T10:08:00Z",
+      "busId": "BUS-16",
+      "routeId": "R7"
+    },
+    {
+      "id": "det_030",
+      "type": "missing_zebra_crossing",
+      "lat": 23.241325,
+      "lng": 77.388416,
+      "confidence": 0.73,
+      "timestamp": "2026-09-08T13:58:00Z",
+      "busId": "BUS-02",
+      "routeId": "R11"
+    },
+    {
+      "id": "det_031",
+      "type": "pothole",
+      "lat": 23.269107,
+      "lng": 77.421371,
+      "confidence": 0.75,
+      "timestamp": "2026-09-07T07:51:00Z",
+      "busId": "BUS-08",
+      "routeId": "R4"
+    },
+    {
+      "id": "det_032",
+      "type": "missing_zebra_crossing",
+      "lat": 23.241313,
+      "lng": 77.409517,
+      "confidence": 0.67,
+      "timestamp": "2026-09-08T10:15:00Z",
+      "busId": "BUS-03",
+      "routeId": "R8"
+    },
+    {
+      "id": "det_033",
+      "type": "pothole",
+      "lat": 23.278381,
+      "lng": 77.433958,
+      "confidence": 0.62,
+      "timestamp": "2026-09-05T07:35:00Z",
+      "busId": "BUS-08",
+      "routeId": "R3"
+    },
+    {
+      "id": "det_034",
+      "type": "missing_zebra_crossing",
+      "lat": 23.254285,
+      "lng": 77.411482,
+      "confidence": 0.94,
+      "timestamp": "2026-09-06T12:28:00Z",
+      "busId": "BUS-01",
+      "routeId": "R7"
+    },
+    {
+      "id": "det_035",
+      "type": "missing_zebra_crossing",
+      "lat": 23.245812,
+      "lng": 77.429644,
+      "confidence": 0.71,
+      "timestamp": "2026-09-08T08:38:00Z",
+      "busId": "BUS-07",
+      "routeId": "R5"
+    },
+    {
+      "id": "det_036",
+      "type": "road_crack",
+      "lat": 23.242962,
+      "lng": 77.386109,
+      "confidence": 0.81,
+      "timestamp": "2026-09-07T06:58:00Z",
+      "busId": "BUS-02",
+      "routeId": "R10"
+    },
+    {
+      "id": "det_037",
+      "type": "missing_divider",
+      "lat": 23.258507,
+      "lng": 77.437763,
+      "confidence": 0.66,
+      "timestamp": "2026-09-05T09:10:00Z",
+      "busId": "BUS-03",
+      "routeId": "R10"
+    },
+    {
+      "id": "det_038",
+      "type": "missing_zebra_crossing",
+      "lat": 23.233978,
+      "lng": 77.434309,
+      "confidence": 0.65,
+      "timestamp": "2026-09-06T15:52:00Z",
+      "busId": "BUS-20",
+      "routeId": "R1"
+    },
+    {
+      "id": "det_039",
+      "type": "missing_divider",
+      "lat": 23.267063,
+      "lng": 77.407753,
+      "confidence": 0.81,
+      "timestamp": "2026-09-07T10:27:00Z",
+      "busId": "BUS-07",
+      "routeId": "R11"
+    },
+    {
+      "id": "det_040",
+      "type": "missing_zebra_crossing",
+      "lat": 23.272872,
+      "lng": 77.396921,
+      "confidence": 0.65,
+      "timestamp": "2026-09-07T13:48:00Z",
+      "busId": "BUS-11",
+      "routeId": "R2"
+    },
+    {
+      "id": "det_041",
+      "type": "missing_divider",
+      "lat": 23.230459,
+      "lng": 77.41987,
+      "confidence": 0.98,
+      "timestamp": "2026-09-05T15:10:00Z",
+      "busId": "BUS-07",
+      "routeId": "R9"
+    },
+    {
+      "id": "det_042",
+      "type": "pothole",
+      "lat": 23.245812,
+      "lng": 77.438596,
+      "confidence": 0.93,
+      "timestamp": "2026-09-07T10:51:00Z",
+      "busId": "BUS-06",
+      "routeId": "R8"
+    },
+    {
+      "id": "det_043",
+      "type": "missing_divider",
+      "lat": 23.279925,
+      "lng": 77.424812,
+      "confidence": 0.97,
+      "timestamp": "2026-09-05T17:23:00Z",
+      "busId": "BUS-18",
+      "routeId": "R5"
+    },
+    {
+      "id": "det_044",
+      "type": "waterlogging",
+      "lat": 23.285805,
+      "lng": 77.388815,
+      "confidence": 0.7,
+      "timestamp": "2026-09-05T15:26:00Z",
+      "busId": "BUS-05",
+      "routeId": "R5"
+    },
+    {
+      "id": "det_045",
+      "type": "missing_signage",
+      "lat": 23.246805,
+      "lng": 77.395238,
+      "confidence": 0.68,
+      "timestamp": "2026-09-07T14:37:00Z",
+      "busId": "BUS-16",
+      "routeId": "R5"
+    },
+    {
+      "id": "det_046",
+      "type": "pothole",
+      "lat": 23.28422,
+      "lng": 77.433366,
+      "confidence": 0.84,
+      "timestamp": "2026-09-07T06:45:00Z",
+      "busId": "BUS-01",
+      "routeId": "R6"
+    },
+    {
+      "id": "det_047",
+      "type": "missing_signage",
+      "lat": 23.276167,
+      "lng": 77.420827,
+      "confidence": 0.66,
+      "timestamp": "2026-09-08T15:24:00Z",
+      "busId": "BUS-14",
+      "routeId": "R9"
+    },
+    {
+      "id": "det_048",
+      "type": "road_crack",
+      "lat": 23.23048,
+      "lng": 77.387115,
+      "confidence": 0.94,
+      "timestamp": "2026-09-05T12:18:00Z",
+      "busId": "BUS-19",
+      "routeId": "R9"
+    },
+    {
+      "id": "det_049",
+      "type": "missing_signage",
+      "lat": 23.238786,
+      "lng": 77.390247,
+      "confidence": 0.74,
+      "timestamp": "2026-09-05T12:06:00Z",
+      "busId": "BUS-07",
+      "routeId": "R11"
+    },
+    {
+      "id": "det_050",
+      "type": "missing_divider",
+      "lat": 23.244872,
+      "lng": 77.388768,
+      "confidence": 0.94,
+      "timestamp": "2026-09-08T16:35:00Z",
+      "busId": "BUS-05",
+      "routeId": "R4"
+    },
+    {
+      "id": "det_051",
+      "type": "waterlogging",
+      "lat": 23.281776,
+      "lng": 77.441172,
+      "confidence": 0.93,
+      "timestamp": "2026-09-05T09:03:00Z",
+      "busId": "BUS-11",
+      "routeId": "R7"
+    },
+    {
+      "id": "det_052",
+      "type": "waterlogging",
+      "lat": 23.278034,
+      "lng": 77.434444,
+      "confidence": 0.7,
+      "timestamp": "2026-09-05T12:31:00Z",
+      "busId": "BUS-02",
+      "routeId": "R8"
+    },
+    {
+      "id": "det_053",
+      "type": "missing_zebra_crossing",
+      "lat": 23.243246,
+      "lng": 77.431595,
+      "confidence": 0.73,
+      "timestamp": "2026-09-06T09:48:00Z",
+      "busId": "BUS-01",
+      "routeId": "R11"
+    },
+    {
+      "id": "det_054",
+      "type": "pothole",
+      "lat": 23.241488,
+      "lng": 77.402296,
+      "confidence": 0.97,
+      "timestamp": "2026-09-07T11:59:00Z",
+      "busId": "BUS-17",
+      "routeId": "R7"
+    },
+    {
+      "id": "det_055",
+      "type": "missing_signage",
+      "lat": 23.270671,
+      "lng": 77.43322,
+      "confidence": 0.96,
+      "timestamp": "2026-09-05T10:27:00Z",
+      "busId": "BUS-06",
+      "routeId": "R10"
+    },
+    {
+      "id": "det_056",
+      "type": "pothole",
+      "lat": 23.287652,
+      "lng": 77.398528,
+      "confidence": 0.83,
+      "timestamp": "2026-09-07T11:21:00Z",
+      "busId": "BUS-14",
+      "routeId": "R10"
+    },
+    {
+      "id": "det_057",
+      "type": "missing_divider",
+      "lat": 23.288954,
+      "lng": 77.389539,
+      "confidence": 0.67,
+      "timestamp": "2026-09-05T13:26:00Z",
+      "busId": "BUS-01",
+      "routeId": "R9"
+    },
+    {
+      "id": "det_058",
+      "type": "road_crack",
+      "lat": 23.285435,
+      "lng": 77.414907,
+      "confidence": 0.96,
+      "timestamp": "2026-09-06T12:12:00Z",
+      "busId": "BUS-14",
+      "routeId": "R2"
+    },
+    {
+      "id": "det_059",
+      "type": "missing_divider",
+      "lat": 23.286832,
+      "lng": 77.437846,
+      "confidence": 0.72,
+      "timestamp": "2026-09-05T11:07:00Z",
+      "busId": "BUS-17",
+      "routeId": "R5"
+    },
+    {
+      "id": "det_060",
+      "type": "road_crack",
+      "lat": 23.269914,
+      "lng": 77.402171,
+      "confidence": 0.71,
+      "timestamp": "2026-09-06T09:16:00Z",
+      "busId": "BUS-14",
+      "routeId": "R11"
+    },
+    {
+      "id": "det_061",
+      "type": "waterlogging",
+      "lat": 23.286322,
+      "lng": 77.423239,
+      "confidence": 0.83,
+      "timestamp": "2026-09-07T12:55:00Z",
+      "busId": "BUS-18",
+      "routeId": "R1"
+    },
+    {
+      "id": "det_062",
+      "type": "missing_divider",
+      "lat": 23.248132,
+      "lng": 77.395211,
+      "confidence": 0.83,
+      "timestamp": "2026-09-07T13:56:00Z",
+      "busId": "BUS-15",
+      "routeId": "R8"
+    },
+    {
+      "id": "det_063",
+      "type": "road_crack",
+      "lat": 23.270438,
+      "lng": 77.41327,
+      "confidence": 0.66,
+      "timestamp": "2026-09-05T10:50:00Z",
+      "busId": "BUS-17",
+      "routeId": "R11"
+    },
+    {
+      "id": "det_064",
+      "type": "waterlogging",
+      "lat": 23.267876,
+      "lng": 77.402711,
+      "confidence": 0.86,
+      "timestamp": "2026-09-06T09:23:00Z",
+      "busId": "BUS-05",
+      "routeId": "R1"
+    },
+    {
+      "id": "det_065",
+      "type": "missing_divider",
+      "lat": 23.232673,
+      "lng": 77.441636,
+      "confidence": 0.92,
+      "timestamp": "2026-09-05T13:46:00Z",
+      "busId": "BUS-14",
+      "routeId": "R11"
+    },
+    {
+      "id": "det_066",
+      "type": "missing_zebra_crossing",
+      "lat": 23.26444,
+      "lng": 77.425701,
+      "confidence": 0.79,
+      "timestamp": "2026-09-06T08:31:00Z",
+      "busId": "BUS-01",
+      "routeId": "R2"
+    },
+    {
+      "id": "det_067",
+      "type": "road_crack",
+      "lat": 23.276605,
+      "lng": 77.39573,
+      "confidence": 0.8,
+      "timestamp": "2026-09-05T15:30:00Z",
+      "busId": "BUS-08",
+      "routeId": "R2"
+    },
+    {
+      "id": "det_068",
+      "type": "road_crack",
+      "lat": 23.257288,
+      "lng": 77.430685,
+      "confidence": 0.8,
+      "timestamp": "2026-09-07T13:33:00Z",
+      "busId": "BUS-20",
+      "routeId": "R12"
+    },
+    {
+      "id": "det_069",
+      "type": "missing_divider",
+      "lat": 23.283421,
+      "lng": 77.408204,
+      "confidence": 0.77,
+      "timestamp": "2026-09-06T14:06:00Z",
+      "busId": "BUS-15",
+      "routeId": "R5"
+    },
+    {
+      "id": "det_070",
+      "type": "missing_signage",
+      "lat": 23.275007,
+      "lng": 77.432992,
+      "confidence": 0.89,
+      "timestamp": "2026-09-08T16:41:00Z",
+      "busId": "BUS-08",
+      "routeId": "R5"
+    },
+    {
+      "id": "det_071",
+      "type": "waterlogging",
+      "lat": 23.256292,
+      "lng": 77.425413,
+      "confidence": 0.7,
+      "timestamp": "2026-09-07T15:13:00Z",
+      "busId": "BUS-03",
+      "routeId": "R3"
+    },
+    {
+      "id": "det_072",
+      "type": "waterlogging",
+      "lat": 23.23895,
+      "lng": 77.405582,
+      "confidence": 0.87,
+      "timestamp": "2026-09-05T13:04:00Z",
+      "busId": "BUS-14",
+      "routeId": "R6"
+    },
+    {
+      "id": "det_073",
+      "type": "waterlogging",
+      "lat": 23.262457,
+      "lng": 77.407546,
+      "confidence": 0.92,
+      "timestamp": "2026-09-08T15:58:00Z",
+      "busId": "BUS-01",
+      "routeId": "R10"
+    },
+    {
+      "id": "det_075",
+      "type": "waterlogging",
+      "lat": 23.273978,
+      "lng": 77.430592,
+      "confidence": 0.79,
+      "timestamp": "2026-09-07T13:26:00Z",
+      "busId": "BUS-16",
+      "routeId": "R1"
+    },
+    {
+      "id": "det_076",
+      "type": "missing_zebra_crossing",
+      "lat": 23.253231,
+      "lng": 77.422732,
+      "confidence": 0.88,
+      "timestamp": "2026-09-08T08:10:00Z",
+      "busId": "BUS-20",
+      "routeId": "R9"
+    },
+    {
+      "id": "det_077",
+      "type": "missing_divider",
+      "lat": 23.231518,
+      "lng": 77.406241,
+      "confidence": 0.85,
+      "timestamp": "2026-09-05T16:58:00Z",
+      "busId": "BUS-14",
+      "routeId": "R3"
+    },
+    {
+      "id": "det_078",
+      "type": "missing_signage",
+      "lat": 23.281911,
+      "lng": 77.393504,
+      "confidence": 0.74,
+      "timestamp": "2026-09-06T13:45:00Z",
+      "busId": "BUS-11",
+      "routeId": "R6"
+    },
+    {
+      "id": "det_079",
+      "type": "missing_zebra_crossing",
+      "lat": 23.275574,
+      "lng": 77.405348,
+      "confidence": 0.7,
+      "timestamp": "2026-09-05T14:01:00Z",
+      "busId": "BUS-01",
+      "routeId": "R12"
+    },
+    {
+      "id": "det_080",
+      "type": "missing_signage",
+      "lat": 23.262265,
+      "lng": 77.442594,
+      "confidence": 0.69,
+      "timestamp": "2026-09-05T17:07:00Z",
+      "busId": "BUS-02",
+      "routeId": "R1"
+    },
+    {
+      "id": "det_081",
+      "type": "pothole",
+      "lat": 23.286877,
+      "lng": 77.394562,
+      "confidence": 0.84,
+      "timestamp": "2026-09-06T08:09:00Z",
+      "busId": "BUS-16",
+      "routeId": "R11"
+    },
+    {
+      "id": "det_082",
+      "type": "missing_zebra_crossing",
+      "lat": 23.236763,
+      "lng": 77.439465,
+      "confidence": 0.87,
+      "timestamp": "2026-09-07T08:51:00Z",
+      "busId": "BUS-20",
+      "routeId": "R10"
+    },
+    {
+      "id": "det_083",
+      "type": "waterlogging",
+      "lat": 23.287724,
+      "lng": 77.425701,
+      "confidence": 0.97,
+      "timestamp": "2026-09-05T15:52:00Z",
+      "busId": "BUS-01",
+      "routeId": "R5"
+    },
+    {
+      "id": "det_084",
+      "type": "missing_zebra_crossing",
+      "lat": 23.264448,
+      "lng": 77.437082,
+      "confidence": 0.75,
+      "timestamp": "2026-09-06T07:17:00Z",
+      "busId": "BUS-19",
+      "routeId": "R12"
+    },
+    {
+      "id": "det_085",
+      "type": "road_crack",
+      "lat": 23.279734,
+      "lng": 77.397171,
+      "confidence": 0.89,
+      "timestamp": "2026-09-05T15:39:00Z",
+      "busId": "BUS-02",
+      "routeId": "R6"
+    },
+    {
+      "id": "det_086",
+      "type": "pothole",
+      "lat": 23.261865,
+      "lng": 77.422291,
+      "confidence": 0.79,
+      "timestamp": "2026-09-07T06:12:00Z",
+      "busId": "BUS-14",
+      "routeId": "R8"
+    },
+    {
+      "id": "det_087",
+      "type": "road_crack",
+      "lat": 23.236232,
+      "lng": 77.440247,
+      "confidence": 0.94,
+      "timestamp": "2026-09-08T08:36:00Z",
+      "busId": "BUS-14",
+      "routeId": "R3"
+    },
+    {
+      "id": "det_088",
+      "type": "missing_signage",
+      "lat": 23.273928,
+      "lng": 77.440528,
+      "confidence": 0.83,
+      "timestamp": "2026-09-08T13:56:00Z",
+      "busId": "BUS-14",
+      "routeId": "R12"
+    },
+    {
+      "id": "det_089",
+      "type": "waterlogging",
+      "lat": 23.265448,
+      "lng": 77.401938,
+      "confidence": 0.92,
+      "timestamp": "2026-09-05T10:45:00Z",
+      "busId": "BUS-15",
+      "routeId": "R4"
+    },
+    {
+      "id": "det_090",
+      "type": "road_crack",
+      "lat": 23.274929,
+      "lng": 77.416791,
+      "confidence": 0.74,
+      "timestamp": "2026-09-05T14:26:00Z",
+      "busId": "BUS-11",
+      "routeId": "R3"
+    },
+    {
+      "id": "det_091",
+      "type": "missing_signage",
+      "lat": 23.259153,
+      "lng": 77.403889,
+      "confidence": 0.73,
+      "timestamp": "2026-09-07T15:29:00Z",
+      "busId": "BUS-01",
+      "routeId": "R9"
+    },
+    {
+      "id": "det_092",
+      "type": "road_crack",
+      "lat": 23.286784,
+      "lng": 77.387737,
+      "confidence": 0.75,
+      "timestamp": "2026-09-06T17:47:00Z",
+      "busId": "BUS-16",
+      "routeId": "R11"
+    },
+    {
+      "id": "inc_002",
+      "type": "incident",
+      "lat": 23.272611,
+      "lng": 77.40949,
+      "confidence": 0.86,
+      "timestamp": "2026-09-06T11:13:00Z",
+      "busId": "BUS-16",
+      "routeId": "R9"
+    },
+    {
+      "id": "inc_003",
+      "type": "incident",
+      "lat": 23.261755,
+      "lng": 77.40813,
+      "confidence": 0.73,
+      "timestamp": "2026-09-07T10:17:00Z",
+      "busId": "BUS-07",
+      "routeId": "R6"
+    },
+    {
+      "id": "inc_004",
+      "type": "incident",
+      "lat": 23.237073,
+      "lng": 77.414752,
+      "confidence": 0.78,
+      "timestamp": "2026-09-07T07:42:00Z",
+      "busId": "BUS-12",
+      "routeId": "R3"
+    },
+    {
+      "id": "inc_005",
+      "type": "incident",
+      "lat": 23.248036,
+      "lng": 77.425081,
+      "confidence": 0.73,
+      "timestamp": "2026-09-06T16:53:00Z",
+      "busId": "BUS-01",
+      "routeId": "R10"
+    },
+    {
+      "id": "inc_006",
+      "type": "incident",
+      "lat": 23.24696,
+      "lng": 77.411323,
+      "confidence": 0.83,
+      "timestamp": "2026-09-05T07:06:00Z",
+      "busId": "BUS-19",
+      "routeId": "R11"
+    },
+    {
+      "id": "inc_007",
+      "type": "incident",
+      "lat": 23.271087,
+      "lng": 77.391704,
+      "confidence": 0.91,
+      "timestamp": "2026-09-08T16:20:00Z",
+      "busId": "BUS-08",
+      "routeId": "R9"
+    },
+    {
+      "id": "inc_008",
+      "type": "incident",
+      "lat": 23.252723,
+      "lng": 77.43711,
+      "confidence": 0.76,
+      "timestamp": "2026-09-05T09:32:00Z",
+      "busId": "BUS-03",
+      "routeId": "R3"
+    },
+    {
+      "id": "inc_009",
+      "type": "incident",
+      "lat": 23.244292,
+      "lng": 77.41572,
+      "confidence": 0.78,
+      "timestamp": "2026-09-07T06:33:00Z",
+      "busId": "BUS-10",
+      "routeId": "R12"
+    }
+  ],
+  "incidents": [
+    {
+      "id": "inc_001",
+      "type": "hit_and_run",
+      "lat": 23.2612,
+      "lng": 77.409,
+      "plateNumber": "MP04AB1234",
+      "confidence": 0.91,
+      "timestamp": "2026-09-05T08:15:00Z",
+      "evidenceImageUrl": "https://placehold.co/480x270?text=Evidence+Frame"
+    },
+    {
+      "id": "inc_002",
+      "type": "collision",
+      "lat": 23.272611,
+      "lng": 77.40949,
+      "plateNumber": "MP12ED7625",
+      "confidence": 0.86,
+      "timestamp": "2026-09-06T11:13:00Z",
+      "evidenceImageUrl": "https://placehold.co/480x270?text=Evidence+Frame"
+    },
+    {
+      "id": "inc_003",
+      "type": "hit_and_run",
+      "lat": 23.261755,
+      "lng": 77.40813,
+      "plateNumber": "DL43FH5438",
+      "confidence": 0.73,
+      "timestamp": "2026-09-07T10:17:00Z",
+      "evidenceImageUrl": "https://placehold.co/480x270?text=Evidence+Frame"
+    },
+    {
+      "id": "inc_004",
+      "type": "hit_and_run",
+      "lat": 23.237073,
+      "lng": 77.414752,
+      "plateNumber": "CG25DH5530",
+      "confidence": 0.78,
+      "timestamp": "2026-09-07T07:42:00Z",
+      "evidenceImageUrl": "https://placehold.co/480x270?text=Evidence+Frame"
+    },
+    {
+      "id": "inc_005",
+      "type": "rash_driving",
+      "lat": 23.248036,
+      "lng": 77.425081,
+      "plateNumber": "CG36AA5786",
+      "confidence": 0.73,
+      "timestamp": "2026-09-06T16:53:00Z",
+      "evidenceImageUrl": "https://placehold.co/480x270?text=Evidence+Frame"
+    },
+    {
+      "id": "inc_006",
+      "type": "rash_driving",
+      "lat": 23.24696,
+      "lng": 77.411323,
+      "plateNumber": "MH24AE8827",
+      "confidence": 0.83,
+      "timestamp": "2026-09-05T07:06:00Z",
+      "evidenceImageUrl": "https://placehold.co/480x270?text=Evidence+Frame"
+    },
+    {
+      "id": "inc_007",
+      "type": "collision",
+      "lat": 23.271087,
+      "lng": 77.391704,
+      "plateNumber": "DL39BD2940",
+      "confidence": 0.91,
+      "timestamp": "2026-09-08T16:20:00Z",
+      "evidenceImageUrl": "https://placehold.co/480x270?text=Evidence+Frame"
+    },
+    {
+      "id": "inc_008",
+      "type": "collision",
+      "lat": 23.252723,
+      "lng": 77.43711,
+      "plateNumber": "MH55EK1986",
+      "confidence": 0.76,
+      "timestamp": "2026-09-05T09:32:00Z",
+      "evidenceImageUrl": "https://placehold.co/480x270?text=Evidence+Frame"
+    },
+    {
+      "id": "inc_009",
+      "type": "hit_and_run",
+      "lat": 23.244292,
+      "lng": 77.41572,
+      "plateNumber": "CG01GH8699",
+      "confidence": 0.78,
+      "timestamp": "2026-09-07T06:33:00Z",
+      "evidenceImageUrl": "https://placehold.co/480x270?text=Evidence+Frame"
+    }
+  ],
+  "heatmap": [
+    {
+      "lat": 23.281476,
+      "lng": 77.386871,
+      "weight": 2,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.285335,
+      "lng": 77.42987,
+      "weight": 6,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.265287,
+      "lng": 77.430834,
+      "weight": 2,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.255408,
+      "lng": 77.415274,
+      "weight": 6,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.238839,
+      "lng": 77.398538,
+      "weight": 2,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.234185,
+      "lng": 77.392555,
+      "weight": 3,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.265603,
+      "lng": 77.432054,
+      "weight": 3,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.256249,
+      "lng": 77.410722,
+      "weight": 3,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.271884,
+      "lng": 77.439161,
+      "weight": 5,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.262299,
+      "lng": 77.408866,
+      "weight": 5,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.232292,
+      "lng": 77.408522,
+      "weight": 3,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.266123,
+      "lng": 77.384152,
+      "weight": 2,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.287615,
+      "lng": 77.432758,
+      "weight": 5,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.265127,
+      "lng": 77.383845,
+      "weight": 6,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.279185,
+      "lng": 77.417175,
+      "weight": 2,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.25813,
+      "lng": 77.421691,
+      "weight": 3,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.240789,
+      "lng": 77.41772,
+      "weight": 6,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.278755,
+      "lng": 77.440743,
+      "weight": 4,
+      "type": "pothole"
+    },
+    {
+      "lat": 23.250778,
+      "lng": 77.402599,
+      "weight": 6,
+      "type": "waterlogging"
+    },
+    {
+      "lat": 23.236176,
+      "lng": 77.392249,
+      "weight": 4,
+      "type": "waterlogging"
+    },
+    {
+      "lat": 23.27152,
+      "lng": 77.399893,
+      "weight": 4,
+      "type": "waterlogging"
+    },
+    {
+      "lat": 23.278714,
+      "lng": 77.415606,
+      "weight": 4,
+      "type": "waterlogging"
+    },
+    {
+      "lat": 23.235184,
+      "lng": 77.397744,
+      "weight": 1,
+      "type": "waterlogging"
+    },
+    {
+      "lat": 23.288111,
+      "lng": 77.406851,
+      "weight": 5,
+      "type": "waterlogging"
+    },
+    {
+      "lat": 23.279396,
+      "lng": 77.382669,
+      "weight": 5,
+      "type": "waterlogging"
+    },
+    {
+      "lat": 23.257619,
+      "lng": 77.385852,
+      "weight": 5,
+      "type": "waterlogging"
+    },
+    {
+      "lat": 23.251607,
+      "lng": 77.427987,
+      "weight": 6,
+      "type": "waterlogging"
+    },
+    {
+      "lat": 23.256422,
+      "lng": 77.385697,
+      "weight": 3,
+      "type": "waterlogging"
+    },
+    {
+      "lat": 23.262853,
+      "lng": 77.43826,
+      "weight": 4,
+      "type": "congestion"
+    },
+    {
+      "lat": 23.282751,
+      "lng": 77.411683,
+      "weight": 1,
+      "type": "congestion"
+    },
+    {
+      "lat": 23.288289,
+      "lng": 77.419132,
+      "weight": 2,
+      "type": "congestion"
+    },
+    {
+      "lat": 23.272487,
+      "lng": 77.401245,
+      "weight": 1,
+      "type": "congestion"
+    },
+    {
+      "lat": 23.263035,
+      "lng": 77.388193,
+      "weight": 1,
+      "type": "congestion"
+    },
+    {
+      "lat": 23.257587,
+      "lng": 77.389648,
+      "weight": 2,
+      "type": "congestion"
+    },
+    {
+      "lat": 23.259803,
+      "lng": 77.425596,
+      "weight": 5,
+      "type": "congestion"
+    },
+    {
+      "lat": 23.272225,
+      "lng": 77.407529,
+      "weight": 4,
+      "type": "congestion"
+    },
+    {
+      "lat": 23.288715,
+      "lng": 77.397224,
+      "weight": 5,
+      "type": "congestion"
+    },
+    {
+      "lat": 23.238579,
+      "lng": 77.394037,
+      "weight": 5,
+      "type": "congestion"
+    },
+    {
+      "lat": 23.260394,
+      "lng": 77.43536,
+      "weight": 1,
+      "type": "congestion"
+    },
+    {
+      "lat": 23.246475,
+      "lng": 77.43,
+      "weight": 4,
+      "type": "congestion"
+    },
+    {
+      "lat": 23.250293,
+      "lng": 77.429863,
+      "weight": 3,
+      "type": "congestion"
+    },
+    {
+      "lat": 23.279133,
+      "lng": 77.39957,
+      "weight": 3,
+      "type": "congestion"
+    }
+  ],
+  "workorders": []
+}
