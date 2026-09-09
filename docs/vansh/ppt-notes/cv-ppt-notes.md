@@ -1,9 +1,11 @@
 # Computer Vision — SIH PPT Notes
 
 ## Project
+
 AI-Powered Mobile Urban Intelligence Platform Using Public Transport Fleet
 
 ## Developer
+
 Vansh
 
 ---
@@ -18,45 +20,75 @@ The Computer Vision layer is responsible for converting visual data into structu
 
 ---
 
-# 2. Current CV Pipeline
+# 2. Current CV Architecture
 
 Camera / Dashcam Video
+
         ↓
-Frame Selection
+
+Privacy Processing
+
         ↓
-Frame Resize
+
+Frame / Image
+
         ↓
-Face Detection
+
+Model Registry
+
         ↓
-Face Anonymization
+
+Unified CV Detector
+
         ↓
-Object Detection
+
+Multiple CV Models
+
         ↓
-Structured Detection Results
+
+Result Parser
+
         ↓
-Future: Road Defect Detection
+
+Unified Detection Results
+
         ↓
-Future: GPS/Event Integration
+
+Defect Event Generation
+
+        ↓
+
+JSON Serialization
+
+        ↓
+
+Future: Backend / GPS Integration
 
 ---
 
 # 3. Technology Used
 
 ### Programming
+
 - Python
 
 ### Computer Vision
+
 - OpenCV
 
 ### AI / Object Detection
+
 - Ultralytics YOLO
 
 ### Deep Learning Framework
+
 - PyTorch
 
 ### Models
+
 - YOLO11n
 - YOLO11n Face Detection Model
+- YOLO11n-based Pothole Model — training pending
 
 ---
 
@@ -66,14 +98,16 @@ A major requirement of the system is protecting personally identifiable visual i
 
 Faces detected in captured frames are blurred before the frame is used for further processing or persistent storage.
 
-This creates a privacy-aware processing pipeline.
-
 ### Privacy Flow
 
 Raw Frame
+
 → Face Detection
+
 → Face Blur
+
 → Privacy-Safe Frame
+
 → Further CV Processing
 
 ---
@@ -94,9 +128,9 @@ This allows the pipeline to be tested locally without requiring a dedicated GPU.
 
 ---
 
-# 6. Demonstrated Result
+# 6. Demonstrated Video Pipeline Result
 
-The complete video pipeline was successfully tested.
+The complete privacy-aware video pipeline was successfully tested.
 
 ### Test Result
 
@@ -112,16 +146,26 @@ The complete video pipeline was successfully tested.
 
 ---
 
-# 7. Current Detection Capability
+# 7. General Object Detection
 
-The pretrained YOLO model currently detects general objects such as:
+The pretrained YOLO11n model currently detects general objects such as:
 
 - Cars
 - Buses
 - Persons
 - Other supported general classes
 
-This is a baseline capability.
+### Example Unified Detection
+
+A test urban bus image produced structured detections including:
+
+- Bus — confidence: 0.9402
+- Person — confidence: 0.8882
+- Person — confidence: 0.8783
+- Person — confidence: 0.8558
+- Person — confidence: 0.6219
+
+This confirms that the unified inference architecture is working successfully.
 
 ---
 
@@ -129,7 +173,11 @@ This is a baseline capability.
 
 The final system requires specialized models for urban infrastructure intelligence.
 
-Planned detection tasks:
+### Current Project-Specific Target
+
+- Pothole detection
+
+### Planned Detection Tasks
 
 - Pothole detection
 - Road crack/damage detection
@@ -144,90 +192,100 @@ These models will be trained or fine-tuned using appropriate datasets.
 
 ---
 
-# 9. Innovation — Repeated Sightings
+# 9. Pothole Detection Development
 
-A detected road defect can be observed by multiple buses.
+The BharatPotHole dataset has been prepared for project-specific pothole detection.
 
-Instead of treating every detection as a separate problem:
+### Dataset
 
-Bus A
-→ Pothole detected
-→ GPS location
+- Training images: 5067
+- Validation images: 1345
+- Test images: 662
+- Total images: 7074
 
-Bus B
-→ Same pothole detected
-→ Similar GPS location
+### Dataset Preparation
 
-Bus C
-→ Same pothole detected
-→ Similar GPS location
+Ground-truth annotations were visually verified.
 
-The backend can combine these observations into one road issue with increased confidence.
+Some label files contained mixed detection and segmentation annotations.
 
-This supports reliable urban infrastructure reporting.
+These were converted into a consistent YOLO detection format.
 
----
+### Preprocessing Result
 
-# 10. SIH Presentation Points
+- Training problematic files: 116 → 0
+- Validation problematic files: 29 → 0
 
-### Problem
-Manual road-condition monitoring is slow, expensive and difficult to scale.
+### Current Status
 
-### Solution
-Use public transport vehicles as mobile AI-powered sensing units.
+Dataset preparation: Complete
 
-### CV Contribution
-Process bus/dashcam video to detect road, traffic and infrastructure-related objects/events.
+Annotation preprocessing: Complete
 
-### Privacy
-Faces are detected and blurred before further processing.
+Training setup: Complete
 
-### Scalability
-The same architecture can process video from multiple buses.
-
-### Future Edge Deployment
-The trained models can later be optimized using techniques such as INT8 quantization and TensorRT for deployment on edge hardware such as NVIDIA Jetson.
+Full model training: Pending on GPU
 
 ---
 
-# 11. Challenges and Solutions
+# 10. Modular Multi-Model Architecture
 
-| Challenge | Solution |
-|---|---|
-| CPU-only development machine | Reduced processing resolution and FPS |
-| OpenCV face detection approach unavailable in current environment | Used dedicated YOLO face model |
-| Python package import issue | Added package initialization files and used module execution |
-| General YOLO model does not detect potholes | Plan project-specific model training |
-| Privacy of captured faces | Face detection + Gaussian blur |
+Instead of depending on a single model for every task, the system uses a modular architecture.
+
+### Model Registry
+
+The registry maintains available CV models.
+
+Current registered models:
+
+- `general_object_detector`
+- `pothole_detector`
+
+If a model file is unavailable, the system can safely skip it until the model becomes available.
+
+### Unified Detector
+
+All available models can be accessed through:
+
+`UnifiedCVDetector`
+
+### Architecture
+
+Model Registry
+
+→ Unified CV Detector
+
+→ Individual CV Models
+
+→ Result Parser
+
+→ Unified Detection Output
+
+This allows future CV models to be added without redesigning the complete inference pipeline.
 
 ---
 
-# 12. Current Progress
+# 11. Unified Detection Output
 
-| Component | Status |
-|---|---|
-| CV Environment | Complete |
-| YOLO Baseline | Complete |
-| Reusable Detector | Complete |
-| Face Detection | Complete |
-| Face Anonymization | Complete |
-| Video Pipeline | Complete |
-| Pothole Detection | Next |
-| Road Damage Detection | Planned |
-| Waterlogging Detection | Planned |
-| Traffic Sign Detection | Planned |
-| Edge Optimization | Planned |
+Different CV models are converted into a common structured format.
 
----
+### Output Fields
 
-# 13. One-Line Presentation Explanation
+- Model
+- Class ID
+- Class name
+- Confidence
+- Bounding box
+- Mask, when available
 
-"Hum public buses ko mobile AI sensing units ki tarah use kar rahe hain, jahan onboard Computer Vision video ko process karke road aur traffic conditions ko automatically detect karta hai, while maintaining privacy through face anonymization."
+### Example
 
----
-
-# 14. Next Development Step
-
-CV-06:
-
-Road-defect dataset preparation and pothole detection model development.
+```text
+{
+    "model": "general_object_detector",
+    "class_id": 5,
+    "class_name": "bus",
+    "confidence": 0.9402,
+    "bbox": [3.83, 229.36, 796.19, 728.41],
+    "mask": None
+}
