@@ -35,3 +35,12 @@ cv/models/test.ogv
 bus.jpg
 runs/
 cv/privacy/blurred_test.jpg
+
+# ML datasets
+cv/datasets/
+
+# Training outputs
+cv/runs/
+
+# Generated CV inspection outputs
+cv/inspection_output/

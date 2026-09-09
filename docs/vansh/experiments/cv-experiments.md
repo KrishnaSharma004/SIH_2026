@@ -1,162 +1,381 @@
-# Computer Vision Experiments
-
-## Project
-AI-Powered Mobile Urban Intelligence Platform Using Public Transport Fleet
-
-## Developer
-Vansh
-
 ---
 
-# Experiment 01 — YOLO11n Baseline Image Detection
+# Experiment 05 — BharatPotHole Dataset Verification
 
 ### Objective
-Test whether the pretrained YOLO11n model can successfully perform object detection on the development machine.
 
-### Input
-Sample urban/bus image.
+Verify and prepare a project-specific pothole dataset for road-defect detection.
 
-### Model
-YOLO11n pretrained model.
+### Dataset
 
-### Hardware
-- CPU: AMD Ryzen 5 5500U
-- GPU: Not available
+BharatPotHole dataset.
 
-### Observed Detection
-The model successfully detected:
+### Dataset Statistics
 
-- Bus
-- Persons
+- Training images: 5067
+- Validation images: 1345
+- Test images: 662
+- Total images: 7074
 
-### Result
-Baseline object detection was successful.
+### Annotation Verification
+
+Random ground-truth samples were inspected visually.
+
+The pothole bounding-box annotations were verified to be correctly aligned with the road defects.
+
+### Observation
+
+Some annotation files contained mixed YOLO formats, including segmentation/polygon annotations alongside detection annotations.
+
+Problematic files identified:
+
+- Training: 116
+- Validation: 29
 
 ### Conclusion
-The pretrained model is suitable for establishing the initial Computer Vision pipeline.
+
+The dataset required preprocessing before it could be used reliably for standard YOLO object detection training.
 
 ---
 
-# Experiment 02 — Face Detection and Anonymization
+# Experiment 06 — Segmentation-to-Detection Annotation Conversion
 
 ### Objective
-Verify that faces can be detected and anonymized before visual data is used further.
 
-### Model
-YOLO11n face detection model.
+Convert mixed YOLO annotation files into a consistent object-detection format.
 
-### Input
-Sample image containing people.
+### Backup
+
+Backups were created before modifying the original labels:
+
+- `train/labels_backup`
+- `valid/labels_backup`
+
+### Script
+
+`cv/preprocessing/convert_segmentation_to_detection.py`
 
 ### Processing
-Face Detection
-→ Face Bounding Box
-→ Gaussian Blur
+
+YOLO polygon coordinates
+
+→ Calculate bounding box
+
+→ Convert to normalized detection format
+
+→ Save updated label
+
+### Conversion Result
+
+Training:
+
+- 116 files converted
+- 276 segmentation rows converted
+- 8519 existing detection rows preserved
+
+Validation:
+
+- 29 files converted
+- 66 segmentation rows converted
+- 2210 existing detection rows preserved
+
+### Verification
+
+After conversion:
+
+- Training problematic files: 0
+- Validation problematic files: 0
 
 ### Result
-Faces were successfully detected and blurred.
+
+The dataset annotations were successfully converted into a consistent YOLO detection format.
 
 ### Conclusion
-The privacy-anonymization component works successfully.
+
+The prepared dataset is ready for pothole model training.
 
 ---
 
-# Experiment 03 — Privacy-Aware Video Pipeline
+# Experiment 07 — Pothole Model Training Feasibility Test
 
 ### Objective
-Test the complete video-processing pipeline on an urban dashcam video while keeping CPU usage manageable.
 
-### Input Video
+Test whether YOLO11n pothole training can be performed locally on the development laptop.
 
-- Resolution: 1920 × 1080
-- Original FPS: 30
-- Original frames read: 3601
+### Model
 
-### Optimization
+YOLO11n.
 
-Because development was performed on a CPU-only laptop, the input was optimized before AI processing.
+### Training Configuration
 
-- Target width: 640 pixels
-- Target height: 360 pixels
-- Target FPS: 10
-- Frame interval: approximately every 3rd frame
+- Image size: 640
+- Batch size: 8
+- Device: CPU
 
-### Processing Pipeline
+### Training Script
 
-Video
-→ Frame Selection
-→ Resize
-→ Face Detection
-→ Face Blur
-→ YOLO Object Detection
-→ Annotated Video Output
+`cv/training/train_pothole.py`
+
+### Observation
+
+CPU-based training was found to be too slow for practical full-dataset training.
+
+### Decision
+
+Full pothole model training will be performed on a suitable NVIDIA GPU system.
+
+### Expected Model
+
+`cv/runs/pothole_yolo11n/weights/best.pt`
 
 ### Result
 
-- Original frames read: 3601
-- Frames processed: 1200
-- Output generated successfully
-- Face anonymization worked
-- General object detection worked
+Training setup was successfully prepared, but final model training remains pending.
+
+---
+
+# Experiment 08 — Road Defect Detector Module
+
+### Objective
+
+Create a reusable inference module for project-specific road defects.
+
+### File
+
+`cv/inference/road_defect_detector.py`
+
+### Processing
+
+Input Frame
+
+→ Road Defect YOLO Model
+
+→ Detection
+
+→ Structured Road Defect Output
 
 ### Output
 
-`cv/inference/test_data/privacy_safe_output.mp4`
+The detector returns:
+
+- Defect type
+- Class ID
+- Confidence
+- Bounding box
+
+### Result
+
+The road defect detector module was successfully implemented.
 
 ### Observation
 
-The model successfully marked general road-scene objects such as cars, buses and persons.
+The module is ready to use the trained pothole model once `best.pt` becomes available.
 
-### Performance Observation
+---
 
-CPU processing generated moderate laptop heat, but the pipeline continued processing successfully.
+# Experiment 09 — Road Defect Severity Estimation
+
+### Objective
+
+Generate an estimated severity level for detected road defects.
+
+### File
+
+`cv/inference/severity.py`
+
+### Processing
+
+Detection
+
+→ Bounding-box area calculation
+
+→ Frame-area ratio
+
+→ Confidence evaluation
+
+→ Severity estimation
+
+### Severity Levels
+
+- Low
+- Medium
+- High
+
+### Test Result
+
+A sample pothole detection with:
+
+- Confidence: 0.87
+- Area ratio: 0.0108
+
+was classified as:
+
+`Medium`
+
+### Limitation
+
+The current severity calculation is heuristic.
+
+It does not represent physically measured pothole depth, width, or actual structural damage.
 
 ### Conclusion
 
-The optimized pipeline is suitable for local functional testing. Further optimization and model acceleration will be required for real-time edge deployment.
+The severity estimation component is functional and can later be replaced or improved using better labelled data or physical measurements.
 
 ---
 
-# Experiment 04 — General Object Detection vs Project-Specific Detection
+# Experiment 10 — Road Defect Event Generation
 
-### Observation
+### Objective
 
-The pretrained YOLO11n model detects general object classes.
+Convert a raw CV detection into a complete road-defect event.
 
-It does not directly provide the project's required road-infrastructure classes such as:
+### File
 
-- Potholes
-- Road cracks
-- Waterlogging
-- Missing dividers
-- Missing zebra crossings
+`cv/inference/defect_event.py`
+
+### Event Data
+
+The generated event contains:
+
+- Defect type
+- Class ID
+- Confidence
+- Bounding box
+- Severity
+- Area ratio
+- Latitude
+- Longitude
+- Timestamp
+
+### Result
+
+A sample pothole event was successfully generated with location and timestamp information.
 
 ### Conclusion
 
-A project-specific dataset and trained/fine-tuned model are required.
-
-This experiment establishes the need for the next Computer Vision stage:
-
-Dataset Preparation
-→ Annotation Verification
-→ Model Training
-→ Evaluation
+CV detections can now be converted into structured road-defect events for downstream backend/API processing.
 
 ---
 
-# Current Experimental Summary
+# Experiment 11 — Event JSON Serialization
 
-| Experiment | Result |
-|---|---|
-| YOLO11n baseline detection | Successful |
-| Face detection | Successful |
-| Face anonymization | Successful |
-| Video processing | Successful |
-| CPU optimization | Successful |
-| Project-specific defect detection | Planned |
+### Objective
+
+Convert road-defect events into an API-ready JSON format.
+
+### File
+
+`cv/inference/event_serializer.py`
+
+### Processing
+
+Road Defect Event
+
+→ JSON Serialization
+
+→ API-Ready Payload
+
+### Result
+
+The event was successfully serialized into JSON.
+
+### Conclusion
+
+The CV module can now prepare structured defect information for future backend/API integration.
 
 ---
 
-# Next Experiment
+# Experiment 12 — Unified CV Result Parser
 
-CV-06 will begin with road-defect dataset preparation and pothole detection model development.
+### Objective
+
+Create a common parser for outputs generated by different CV models.
+
+### File
+
+`cv/inference/result_parser.py`
+
+### Supported Results
+
+- Bounding-box detections
+- Segmentation masks
+
+### Unified Output
+
+Each detection can contain:
+
+- Model name
+- Class ID
+- Class name
+- Confidence
+- Bounding box
+- Mask
+
+### Result
+
+The result parser was successfully implemented and tested.
+
+### Conclusion
+
+Different CV models can now produce a common structured detection format.
+
+---
+
+# Experiment 13 — Unified CV Detector
+
+### Objective
+
+Create a central inference interface capable of using multiple CV models.
+
+### File
+
+`cv/inference/unified_detector.py`
+
+### Architecture
+
+Multiple CV models
+
+→ Unified CV Detector
+
+→ Result Parser
+
+→ Unified Detections
+
+### Work Done
+
+- Added support for multiple registered models.
+- Added model loading.
+- Added inference across registered models.
+- Connected the detector with `result_parser.py`.
+- Added support for bounding-box and mask-aware results.
+
+### Result
+
+The unified CV detector was successfully implemented.
+
+---
+
+# Experiment 14 — CV Model Registry
+
+### Objective
+
+Create a centralized registry for managing CV models.
+
+### File
+
+`cv/inference/model_registry.py`
+
+### Registered Models
+
+- `general_object_detector`
+- `pothole_detector`
+
+### Current Model Availability
+
+```text
+general_object_detector
+exists: True
+
+pothole_detector
+exists: False
